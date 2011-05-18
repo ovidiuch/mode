@@ -5,5 +5,6 @@ exports.server =
 };
 exports.extensions =
 {
+    $: 'text/html',
     html: 'text/html'
 };

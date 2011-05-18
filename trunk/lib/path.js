@@ -27,9 +27,19 @@ exports.parts = function(path, extension)
     return path.substr(1).split('/');
 };
 
+var error = require('./error.js');
+var extension = require('./extension.js');
+
 var Page = function(){};
 
 Page.prototype.init = function()
 {
-    
+    if(!extension.exists(this.extension))
+    {
+        error.throw({
+           code: 500,
+           name: 'invalid_extension',
+           args: { name: this.extension }
+        });
+    }
 };
