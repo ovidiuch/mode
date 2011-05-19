@@ -11,18 +11,18 @@ exports.init = function(subjects, callback)
     {
         this.subjects[i].index(function(err, subject)
         {
-            self.callback(err, subject);
+            self.response(err, subject);
         });
     }
 };
-exports.callback = function(err, subject)
+exports.response = function(err, subject)
 {
     if(err)
     {
         error.throw({
            code: 500,
            name: 'index_fail',
-           args: { name: subject }
+           args: { subject: subject }
         });
     }
     if(this.subjects.indexOf(subject) != -1)

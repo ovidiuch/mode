@@ -1,13 +1,11 @@
-var fs = require('fs');
+global.settings = require('../conf/settings.js');
+global.error = require('./error.js');
+global.path = require('./path.js');
 
-var error = require('./error.js');
-var server = require('./server.js');
-var path = require('./path.js');
+var fs = require('fs');
 
 var extension = require('./extension.js');
 var controller = require('./controller.js');
-
-var settings = require('../conf/settings.js');
 
 exports.start = function()
 {
@@ -21,7 +19,7 @@ exports.start = function()
     });
     require('./index.js').init([controller], function()
     {
-        server.start({
+        require('./server.js').start({
             hostname: settings.server.hostname,
             port: settings.server.port,
             callback: self.request

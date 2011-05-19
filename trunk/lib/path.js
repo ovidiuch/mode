@@ -27,7 +27,6 @@ exports.query = function(path, extension)
     return path.substr(1);
 };
 
-var error = require('./error.js');
 var extension = require('./extension.js');
 var controller = require('./controller.js');
 

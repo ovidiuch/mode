@@ -1,7 +1,5 @@
 var file = require('./file.js');
 
-var settings = require('../conf/settings.js');
-
 exports.path = function(name)
 {
     var path = settings.path.base + '/app/controllers';
