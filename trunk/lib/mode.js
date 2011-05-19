@@ -1,30 +1,40 @@
 var fs = require('fs');
 
-var settings = require('../conf/settings.js');
-
 var error = require('./error.js');
 var server = require('./server.js');
 var path = require('./path.js');
 
+var extension = require('./extension.js');
+var controller = require('./controller.js');
+
+var settings = require('../conf/settings.js');
+
 exports.start = function()
 {
+    var self = this;
+    
+    settings.path.base = fs.realpathSync(__dirname + '/../');
+    
     process.on('uncaughtException', function(e)
     {
         error.handle(e);
     });
-    
-    server.start({
-        hostname: settings.server.hostname,
-        port: settings.server.port,
-        callback: this.onConnection
+    require('./index.js').init([controller], function()
+    {
+        server.start({
+            hostname: settings.server.hostname,
+            port: settings.server.port,
+            callback: self.request
+        });
     });
-    
-    console.log('Mode.js ready.');
 };
 
-var extension = require('./extension.js');
+exports.load = function(page)
+{
+   
+};
 
-exports.onConnection = function(req, res)
+this.request = function(req, res)
 {
     var url = require('url').parse(req.url, true);    
     var page = path.process(url.pathname);
@@ -36,9 +46,4 @@ exports.onConnection = function(req, res)
         'Content-Type': extension.exists(page.extension)
     });
     res.end();
-};
-
-exports.load = function(page)
-{
-    
 };

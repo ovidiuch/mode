@@ -6,5 +6,8 @@ exports.start = function(options)
     {
         options.callback(req, res);
     })
-    .listen(options.port, options.hostname);
+    .listen(options.port, options.hostname, function()
+    {
+        console.log('HTTP Server ON.');
+    });
 };

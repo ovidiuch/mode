@@ -1,3 +1,4 @@
+exports.path = {};
 exports.server =
 {
     hostname: '0.0.0.0',

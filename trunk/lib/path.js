@@ -3,7 +3,7 @@ exports.process = function(path)
     var page = new Page();
     
     page.extension = this.extension(path);
-    page.parts = this.parts(path, page.extension);
+    page.query = this.query(path, page.extension);
     
     page.init();
     
@@ -18,17 +18,18 @@ exports.extension = function(path)
     }
     return '';
 };
-exports.parts = function(path, extension)
+exports.query = function(path, extension)
 {
     if(extension)
     {
         path = path.substr(0, path.length - (extension.length + 1));
     }
-    return path.substr(1).split('/');
+    return path.substr(1);
 };
 
 var error = require('./error.js');
 var extension = require('./extension.js');
+var controller = require('./controller.js');
 
 var Page = function(){};
 
@@ -42,4 +43,5 @@ Page.prototype.init = function()
            args: { name: this.extension }
         });
     }
+    console.log(controller.exists(this.query));
 };
