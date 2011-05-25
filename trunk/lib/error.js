@@ -6,7 +6,3 @@ exports.handle = function(error)
 {
     console.log(JSON.parse(error.message));
 };
-exports.load = function()
-{
-    
-};

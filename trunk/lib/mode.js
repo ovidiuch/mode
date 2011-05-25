@@ -1,47 +1,43 @@
-global.settings = require('../conf/settings.js');
-global.error = require('./error.js');
-global.path = require('./path.js');
-
-var fs = require('fs');
-
-var extension = require('./extension.js');
-var controller = require('./controller.js');
-
 exports.start = function()
 {
+    global.settings = require('../conf/settings.js');
+    global.error = require('./error.js');
+    global.path = require('./path.js');
+    
     var self = this;
     
-    settings.path.base = fs.realpathSync(__dirname + '/../');
+    settings.path.base = require('fs').realpathSync(__dirname + '/../');
     
     process.on('uncaughtException', function(e)
     {
         error.handle(e);
     });
-    require('./index.js').init([controller], function()
+    require('./index.js').init(
+    [
+        require('./controller.js')
+    ],
+    function()
     {
-        require('./server.js').start({
+        require('./server.js').start(
+        {
             hostname: settings.server.hostname,
             port: settings.server.port,
-            callback: self.request
+            
+            callback: function(req, res)
+            {
+                self.request(req, res);
+            }
         });
     });
 };
-
-exports.load = function(page)
+exports.load = function(query, res)
 {
-   
+    path.process(query).load(res);
 };
 
 this.request = function(req, res)
 {
     var url = require('url').parse(req.url, true);    
-    var page = path.process(url.pathname);
     
-    console.log(page);
-    
-    res.writeHead(200,
-    {
-        'Content-Type': extension.exists(page.extension)
-    });
-    res.end();
+    this.load(url.pathname, res);
 };

@@ -13,6 +13,10 @@ exports.index = function(callback)
 {
     this.names = file.readdir(this.path(), true);
     
+    for(var i = 0; i < this.names.length; i++)
+    {
+        this.classes.push(this.names[i].controller);
+    }
     callback(null, this);
 };
 exports.exists = function(name)
@@ -25,3 +29,4 @@ exports.exists = function(name)
 };
 
 this.names = [];
+this.classes = [];
