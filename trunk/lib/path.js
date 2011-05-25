@@ -1,5 +1,7 @@
 exports.process = function(query)
 {
+    console.log('asdd');
+
     return new Page(query);
 };
 
@@ -9,16 +11,16 @@ var controller = require('./controller.js');
 var Page = function(query)
 {
     this.error = null;
-    
+
     this.init(query);
 };
 Page.prototype.url = function()
 {
-    
+
 };
 Page.prototype.redirect = function()
 {
-    
+
 };
 Page.prototype.load = function(res)
 {
@@ -26,9 +28,9 @@ Page.prototype.load = function(res)
     {
         error.throw(this.error);
     }
-    
+
     console.log(this);
-    
+
     if(res)
     {
         Page.response = res;
@@ -46,7 +48,7 @@ Page.prototype.load = function(res)
 Page.prototype.init = function(query)
 {
     this.query = query;
-    
+
     if(Boolean(this.extension = extension.get(this.query)))
     {
         this.query = this.query.substr
@@ -66,14 +68,14 @@ Page.prototype.init = function(query)
     }
     this.controller = 'main';
     this.action = 'index';
-    
+
     var parts = this.query.substr(1).split('/');
-    
+
     if(parts.length >= 2)
     {
         var part1 = parts.slice(0, -2);
         var part2 = parts.slice(-1);
-        
+
         if(controller.exists(part1, part2))
         {
             this.controller = part1;
@@ -93,6 +95,6 @@ Page.prototype.init = function(query)
             args: { query: this.query }
         };
     }
-    
+
     // controller, than action, somehow
 };

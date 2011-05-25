@@ -1,7 +1,7 @@
 exports.init = function(subjects, callback)
 {
     console.log('Indexing app...');
-    
+
     this.subjects = subjects;
     this.callback = callback;
 
