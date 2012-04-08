@@ -1,11 +1,9 @@
-exports.path = {};
 exports.server =
 {
 	hostname: '0.0.0.0',
 	port: 1337
 };
-exports.extensions =
+exports.extension =
 {
-	$: 'text/html',
-	html: 'text/html'
+	default: 'text/html'
 };
