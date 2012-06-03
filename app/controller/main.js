@@ -1,9 +1,7 @@
 var mode = require('../../lib/mode.js')
 
-var controller = function()
-{
-	
-};
+var controller = function(){};
+
 controller.prototype.index = function()
 {
 	
