@@ -19,7 +19,7 @@ exports.controller.prototype =
 					code: 404,
 					message: 'Not found ' + that.args.path
 				},
-				that.response);
+				that.conn);
 			}
 			callback(data);
 		});
