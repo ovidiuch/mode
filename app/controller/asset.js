@@ -6,7 +6,7 @@ exports.controller.prototype =
 {
 	load: function(callback)
 	{
-		var path = mode.settings.path.base + '/app/asset' + this.args.path;
+		var path = mode.settings.path.app + '/asset' + this.args.path;
 
 		var that = this;
 
