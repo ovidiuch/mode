@@ -1,9 +1,11 @@
-var mode = require('../../lib/mode.js')
+var mode = require('../../lib/mode.js');
 
-var controller = function(){};
+exports.controller = function(){};
 
-controller.prototype.index = function()
+exports.controller.prototype =
 {
-	
-};
-exports.controller = controller;
+	index: function(callback)
+	{
+		callback('Hmm...');
+	}
+}

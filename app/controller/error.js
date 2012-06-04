@@ -1,9 +1,11 @@
-var mode = require('../../lib/mode.js')
+var mode = require('../../lib/mode.js');
 
-var controller = function(){};
+exports.controller = function(){};
 
-controller.prototype.load = function()
+exports.controller.prototype =
 {
-	return 'ERROR';
+	load: function(callback)
+	{
+		callback('ERROR. ' + this.args.name + ': ' + this.args.keyword);
+	}
 };
-exports.controller = controller;

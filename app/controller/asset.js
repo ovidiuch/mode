@@ -1,13 +1,28 @@
-var mode = require('../../lib/mode.js')
+var mode = require('../../lib/mode.js');
 
-var controller = function(){};
+exports.controller = function(){};
 
-controller.prototype.load = function()
+exports.controller.prototype =
 {
-	var path = mode.settings.path.base + '/app/assets' + this.args.path;
+	load: function(callback)
+	{
+		var path = mode.settings.path.base + '/app/asset' + this.args.path;
 
-	// Make async
+		var that = this;
 
-	return require('fs').readFileSync(path);
+		require('fs').readFile(path, function(error, data)
+		{
+			if(error)
+			{
+				mode.error.throw(
+				{
+					code: 404,
+					name: 'Not found',
+					keyword: that.args.path
+				},
+				that.response);
+			}
+			callback(data);
+		});
+	}
 };
-exports.controller = controller;
