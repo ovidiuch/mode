@@ -6,6 +6,6 @@ exports.controller.prototype =
 {
 	load: function(callback)
 	{
-		callback('ERROR. ' + this.args.name + ': ' + this.args.keyword);
+		callback('ERROR: ' + this.args.message);
 	}
 };

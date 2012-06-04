@@ -17,8 +17,7 @@ exports.controller.prototype =
 				mode.error.throw(
 				{
 					code: 404,
-					name: 'Not found',
-					keyword: that.args.path
+					message: 'Not found ' + that.args.path
 				},
 				that.response);
 			}
