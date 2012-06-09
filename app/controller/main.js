@@ -2,7 +2,7 @@ exports.super = 'controller/base';
 
 exports.class = function(mode)
 {
-	this.index = function(callback)
+	this.action.index = function(callback)
 	{
 		callback('Hmm...');
 	};
