@@ -6,8 +6,8 @@ exports.class = function(mode)
 
 	this.action.index = function(callback)
 	{
-		this.static.counter++;
+		this.args.counter = ++this.static.counter;
 
-		callback('Hello... ' + this.static.counter);
+		callback();
 	};
 };
