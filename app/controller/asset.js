@@ -1,10 +1,8 @@
-var mode = require('../../lib/mode.js');
-
-exports.controller = function(){};
-
-exports.controller.prototype =
+exports.class = function(mode)
 {
-	load: function(callback)
+	this.super = 'controller/base';
+
+	this.load = function(callback)
 	{
 		var path = mode.settings.path.app + '/asset' + this.args.path;
 
@@ -14,14 +12,9 @@ exports.controller.prototype =
 		{
 			if(error)
 			{
-				mode.error.throw(
-				{
-					code: 404,
-					message: 'Not found ' + that.args.path
-				},
-				that.conn);
+				that.error(404, 'Not found ' + that.args.path);
 			}
 			callback(data);
 		});
-	}
+	};
 };
