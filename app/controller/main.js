@@ -1,4 +1,4 @@
-exports.super = 'controller/base';
+exports.super = 'controller/app';
 
 exports.class = function(mode)
 {
