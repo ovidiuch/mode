@@ -14,7 +14,7 @@ exports.class = function(mode)
 			{
 				that.error(404, 'Not found ' + that.args.path);
 			}
-			callback(data);
+			callback(String(data));
 		});
 	};
 };
