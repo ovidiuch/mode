@@ -8,8 +8,6 @@ exports.class = function(mode)
 	{
 		this.args.layout = 'default';
 
-		this.args.title = 'Hello World!';
-
 		if(typeof(callback) == 'function')
 		{
 			callback();
