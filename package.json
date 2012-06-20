@@ -1,0 +1,17 @@
+{
+  "name": "mode",
+  "description": "Dead-simple web framework for node.js",
+  "version": "0.0.1",
+  "author": "Ovidiu Cherecheș (@skidding)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skidding/mode.git"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "bin": {
+    "mode": "bin/mode.js"
+  }
+}
