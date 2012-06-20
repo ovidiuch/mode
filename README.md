@@ -5,11 +5,11 @@ Dead-simple web framework for [node](http://nodejs.org).
 
 ## Installation
 
-mode.js is primarely built as a true MVC framework, but its simplicity allows you to use it straight out of the box as well.
+mode.js is primarily built as a true MVC framework, but its simplicity allows you to use it straight out of the box as well.
 
 ### MVC project
 
-Install mode globally:
+Install *mode* globally:
 
     $ npm install -g mode
 
@@ -27,11 +27,11 @@ Start app:
 
 Go to [localhost:1337](http://localhost:1337)*.
 
-\* Change port or other options in conf/settings.js
+\* Change port or other options in `conf/settings.js`
 
 ### Non-MVC project
 
-Install mode locally:
+Install *mode* locally:
 
     $ npm install mode
 
