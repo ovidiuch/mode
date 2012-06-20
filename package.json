@@ -12,6 +12,6 @@
   },
   "dependencies": {},
   "bin": {
-    "mode": "bin/mode.js"
+    "mode": "bin/mode.sh"
   }
 }
