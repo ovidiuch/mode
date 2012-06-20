@@ -1,1 +1,1 @@
-require('./lib/mode.js').init();
+require('./index.js').start();
