@@ -48,7 +48,7 @@ then
 
 	cp -R "$NPM_PATH/template/" .
 
-	# Install mode locally, inside .node_modules/
+	# Install mode locally, inside ./node_modules
 
 	echo "Installing mode locally..."
 
