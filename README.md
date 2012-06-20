@@ -9,7 +9,7 @@ mode.js is primarily built as a true MVC framework, but its simplicity allows yo
 
 ### MVC project
 
-Install *mode* globally:
+Install mode globally:
 
     $ npm install -g mode
 
@@ -25,13 +25,13 @@ Start app:
 
     $ mode start
 
-Go to [localhost:1337](http://localhost:1337)*.
+Go to [localhost:1337](http://localhost:1337)*
 
 \* Change port or other options in `conf/settings.js`
 
 ### Non-MVC project
 
-Install *mode* locally:
+Install mode locally:
 
     $ npm install mode
 
@@ -58,4 +58,4 @@ Start app:
 
     $ node foo.js
 
-Go to [localhost:1337](http://localhost:1337).
+Go to [localhost:1337](http://localhost:1337)
