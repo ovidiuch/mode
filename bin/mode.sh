@@ -44,12 +44,7 @@ then
 
 	# Copy project schelet from package to local folder
 
-	cp -R "$NPM_PATH/app" .
-	cp -R "$NPM_PATH/conf" .
-	cp -R "$NPM_PATH/lib" .
-
-	cp "$NPM_PATH/index.js" .
-	cp "$NPM_PATH/start.js" .
+	cp -R "$NPM_PATH/template" .
 
 	# Exit successfully
 
