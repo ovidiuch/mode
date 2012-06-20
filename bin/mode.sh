@@ -44,7 +44,11 @@ then
 
 	# Copy project schelet from package to local folder
 
-	cp -R "$NPM_PATH/template" .
+	cp -R "$NPM_PATH/template/" .
+
+	# Install mode locally
+
+	npm install mode
 
 	# Exit successfully
 
