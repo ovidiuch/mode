@@ -58,4 +58,4 @@ Start app:
 
     $ node foo.js
 
-Go to [localhost:1337](http://localhost:1337)
+Go to [localhost:1337](http://localhost:1337).
