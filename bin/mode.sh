@@ -7,6 +7,7 @@ then
 	# Exit with error and usage notice
 
  	echo "Usage: mode {init|start}"
+
  	exit 2
 fi
 
@@ -37,22 +38,26 @@ then
 			# Exit with abort notice.
 
 			echo "Aborted."
+			
 			exit 0
 		fi
 	fi
-	echo "Creating folder structure..."
-
 	# Copy project schelet from package to local folder
+
+	echo "Creating folder structure..."
 
 	cp -R "$NPM_PATH/template/" .
 
-	# Install mode locally
+	# Install mode locally, inside .node_modules/
+
+	echo "Installing mode locally..."
 
 	npm install mode
 
 	# Exit successfully
 
 	echo "Done."
+
 	exit 0
 fi
 
@@ -72,4 +77,5 @@ fi
 # Exit with error
 
 echo "Unknown command $1"
+
 exit 3
