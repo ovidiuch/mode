@@ -42,11 +42,16 @@ then
 			exit 0
 		fi
 	fi
-	# Copy project schelet from package to local folder
-
 	echo "Creating folder structure..."
 
-	cp -R "$NPM_PATH/template/" .
+	# Clone mode template Git repository
+
+	git clone git://github.com/skidding/mode-template.git .
+
+	# Remove Git files
+
+	rm -rf .git
+	rm .gitignore
 
 	# Install mode locally, inside ./node_modules
 
