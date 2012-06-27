@@ -48,7 +48,7 @@ var mode = require('mode');
 Start mode, with a connection callback:
 
 ```js
-mode.start({ port: 1337 }, function(conn, path)
+mode.start({ server: { port: 1337 }}, function(conn, path)
 {
     mode.server.close(conn, 'You are trying to open: ' + path);
 });
