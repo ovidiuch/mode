@@ -50,7 +50,7 @@ Start mode, with a connection callback:
 ```js
 mode.start({ server: { port: 1337 }}, function(path, args, conn)
 {
-    mode.server.close(conn, 'You are trying to open: ' + path);
+    conn.close('You are trying to open: ' + path);
 });
 ```
 
