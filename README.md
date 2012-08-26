@@ -39,18 +39,18 @@ Open new .js file:
 
     $ vim foo.js
 
-Require mode:
+Initialize mode:
 
 ```js
 var mode = require('mode');
+mode.init();
 ```
 
 Start mode, with a connection callback:
 
 ```js
-mode.start({ server: { port: 1337 }}, function(path, args, conn)
-{
-    conn.close('You are trying to open: ' + path);
+mode.start({port: 1337}, function(path, args, conn) {
+  conn.close('You are trying to open: ' + path);
 });
 ```
 
