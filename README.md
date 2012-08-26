@@ -1,7 +1,7 @@
 mode.js
 ===
 
-Dead-simple web framework for [node](http://nodejs.org).
+A [node.js](http://nodejs.org) web framework for real-world applications.
 
 ## Installation
 
