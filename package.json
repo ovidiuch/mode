@@ -1,7 +1,7 @@
 {
   "name": "mode",
   "description": "A node.js web framework for real-world applications",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Ovidiu Cherecheș (@skidding)",
   "repository": {
     "type": "git",
