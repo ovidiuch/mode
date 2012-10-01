@@ -1,5 +1,5 @@
-var assert = require('assert');
-var extension = require('../lib/extension.js');
+var assert = require('assert'),
+    extension = require('../lib/extension.js');
 
 var baseQuery = '/path/to/something';
 var suffixes = [
@@ -12,6 +12,7 @@ var suffixes = [
   // Query has both a query string and a hastag
   '?query=string&one=1#hash-tag'
 ];
+
 suffixes.forEach(function(suffix) {
   var query = baseQuery + '.ext' + suffix;
 
