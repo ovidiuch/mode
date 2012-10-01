@@ -40,5 +40,4 @@ suffixes.forEach(function(suffix) {
   // Remove extension by changing it into a null value
   query = extension.change(query, null);
   assert.equal(query, baseQuery + suffix);
-
 });
