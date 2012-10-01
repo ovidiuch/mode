@@ -36,4 +36,9 @@ suffixes.forEach(function(suffix) {
 
   // Extract current extension
   assert.equal(extension.extract(query), 'html');
+
+  // Remove extension by changing it into a null value
+  query = extension.change(query, null);
+  assert.equal(query, baseQuery + suffix);
+
 });
